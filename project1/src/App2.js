@@ -4,7 +4,7 @@ function App2()
     return(
         <div>
             <p>Au revoir</p>
-            <img src={image} />
+            <img src={image} alt="image" width="100 " height="100" />
         </div>
     );
 }
