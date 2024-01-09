@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App nom="Fatma" age="22" />
+    <App nom="Mouna" age="23" />
     <App2/>
   </React.StrictMode>
 );
