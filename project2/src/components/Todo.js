@@ -1,18 +1,18 @@
-function Todo() {
+function Todo(props) {
     return (
         <li className="todo stack-small">
             <div className="c-cb">
-                <input id="todo-0" type="checkbox" defaultChecked={true} />
+            <input id="todo-0" type="checkbox" defaultChecked={props.completed} />
                 <label className="todo-label" htmlFor="todo-0">
-                    Manger
+                    {props.name}
                 </label>
             </div>
             <div className="btn-group">
                 <button type="button" className="btn">
-                    Éditer <span className="visually-hidden">Manger</span>
+                    Éditer <span className="visually-hidden">{props.name}</span>
                 </button>
                 <button type="button" className="btn btn__danger">
-                    Supprimer <span className="visually-hidden">Manger</span>
+                    Supprimer <span className="visually-hidden">{props.name}</span>
                 </button>
             </div>
         </li>

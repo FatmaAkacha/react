@@ -42,9 +42,9 @@ function App(props) {
       <ul
         role="list"
         className="todo-list stack-large stack-exception">
-      <Todo/>
-      <Todo/>
-      <Todo/>
+        <Todo name="Manger" completed={true} />
+        <Todo name="Dormir" completed={false} />
+        <Todo name="Recommencer" completed={false} />
       </ul>
     </div>
   );
