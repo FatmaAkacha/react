@@ -1,4 +1,5 @@
 import './App.css';
+import Todo from "./components/Todo";
 function App(props) {
   return (
     <div className="todoapp stack-large">
@@ -41,54 +42,9 @@ function App(props) {
       <ul
         role="list"
         className="todo-list stack-large stack-exception">
-        <li className="todo stack-small">
-          <div className="c-cb">
-            <input id="todo-0" type="checkbox" defaultChecked={true} />
-            <label className="todo-label" htmlFor="todo-0">
-              Manger
-            </label>
-          </div>
-          <div className="btn-group">
-            <button type="button" className="btn">
-              Éditer <span className="visually-hidden">Manger</span>
-            </button>
-            <button type="button" className="btn btn__danger">
-              Supprimer <span className="visually-hidden">Manger</span>
-            </button>
-          </div>
-        </li>
-        <li className="todo stack-small">
-          <div className="c-cb">
-            <input id="todo-1" type="checkbox" />
-            <label className="todo-label" htmlFor="todo-1">
-              Dormir
-            </label>
-          </div>
-          <div className="btn-group">
-            <button type="button" className="btn">
-              Éditer <span className="visually-hidden">Dormir</span>
-            </button>
-            <button type="button" className="btn btn__danger">
-              Supprimer <span className="visually-hidden">Dormir</span>
-            </button>
-          </div>
-        </li>
-        <li className="todo stack-small">
-          <div className="c-cb">
-            <input id="todo-2" type="checkbox" />
-            <label className="todo-label" htmlFor="todo-2">
-              Recommencer
-            </label>
-          </div>
-          <div className="btn-group">
-            <button type="button" className="btn">
-              Éditer <span className="visually-hidden">Recommencer</span>
-            </button>
-            <button type="button" className="btn btn__danger">
-              Supprimer <span className="visually-hidden">Recommencer</span>
-            </button>
-          </div>
-        </li>
+      <Todo/>
+      <Todo/>
+      <Todo/>
       </ul>
     </div>
   );
