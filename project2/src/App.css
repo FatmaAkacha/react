@@ -342,3 +342,38 @@ body {
 .c-cb>input[type="checkbox"]:checked+label::after {
   opacity: 1;
 }
+/* Ajoutez ces styles dans votre fichier App.css */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+thead {
+  background-color: #228bec;
+}
+
+/* Styles pour rendre le tableau plus lisible */
+.todoapp {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.stack-exception {
+  margin-top: 10px;
+}
