@@ -1,48 +1,33 @@
 import './App.css';
 import Todo from "./components/Todo";
+import Form from "./components/Form";
+import FilterButton from "./components/FilterButton";
+
 function App(props) {
-  const taskList = props.tasks?.map((task) =>
-    <Todo 
-      id={task.id} 
-      name={task.name} 
-      completed={task.completed} 
-      key={task.id}/>);
+  const taskList = props.tasks?.map((task) => (
+    <Todo
+      id={task.id}
+      name={task.name}
+      completed={task.completed}
+      key={task.id}
+    />
+  ));
+
+  const taskList2 = props.tasks2?.map((task2) => (
+    <FilterButton
+      id={task2.id}
+      name={task2.name}
+    />
+  ));
+
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <form>
-        <h2 className="label-wrapper">
-          <label htmlFor="new-todo-input" className="label__lg">
-            Qu'y a-t-il à faire&nbsp;?
-          </label>
-        </h2>
-        <input
-          type="text"
-          id="new-todo-input"
-          className="input input__lg"
-          name="text"
-          autoComplete="off"
-        />
-        <button type="submit" className="btn btn__primary btn__lg">
-          Ajouter
-        </button>
-      </form>
+
+      <Form />
+
       <div className="filters btn-group stack-exception">
-        <button type="button" className="btn toggle-btn" >
-          <span className="visually-hidden">Montrer </span>
-          <span>Toutes</span>
-          <span className="visually-hidden"> les tâches</span>
-        </button>
-        <button type="button" className="btn toggle-btn" >
-          <span className="visually-hidden">Montrer </span>
-          <span className="visually-hidden">les tâches </span>
-          <span>Actives</span>
-        </button>
-        <button type="button" className="btn toggle-btn" >
-          <span className="visually-hidden">Montrer </span>
-          <span className="visually-hidden">les tâches </span>
-          <span>Terminées</span>
-        </button>
+      {taskList2}
       </div>
       <h2 id="list-heading">3 tâches restantes</h2>
       <ul
@@ -53,4 +38,5 @@ function App(props) {
     </div>
   );
 }
+
 export default App;
