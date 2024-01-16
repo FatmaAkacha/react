@@ -8,9 +8,8 @@ import { useState } from "react";
 function App(props) {
   const newTask = { id: `todo-${nanoid()}`, name, completed: false };
   const [tasks, setTasks] = useState(props.tasks);
-  const completedTasks = props.tasks.filter((task) => task.completed);
-  const incompleteTasks = props.tasks.filter((task) => !task.completed);
-  const totalTasks = props.tasks.length;
+  const completedTasks = props.tasks.filter(task => task.completed);
+  const incompleteTasks = props.tasks.filter(task => !task.completed);
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
@@ -24,6 +23,9 @@ function App(props) {
     deleteTask={deleteTask}
     />
     ));
+    const tasksWords =
+taskList.length !== 1 ? "tâches restantes" : "tâche restante";
+const headingText = `${taskList.length} ${tasksWords}`;
 
   const taskList2 = props.tasks2.map((task2) => (
     <FilterButton id={task2.id} name={task2.name} />
@@ -49,13 +51,13 @@ function App(props) {
         </thead>
         <tbody>
           <tr>
-            <td>{completedTasks.length}</td>
-            <td>{incompleteTasks.length}</td>
-            <td>{taskList.length}</td>
+            <td>{completedTasks.length === 1 ? "1 tâche terminée" : `${completedTasks.length} tâches terminées`}</td>
+            <td>{incompleteTasks.length === 1 ? "1 tâche restante" : `${incompleteTasks.length} tâches restantes`}</td>
+            <td>{taskList.length=== 1 ? "1 tâche total" : `${taskList.length} tâches totales`}</td>
           </tr>
         </tbody>
       </table>
-
+      <h2 id="list-heading">{headingText}</h2>
       <ul role="list" className="todo-list stack-large stack-exception" aria-labelledby="list-heading">
         {taskList}
       </ul>
