@@ -3,12 +3,12 @@ function Form(props) {
     const [name, setName] = useState("");
     function handleSubmit(e) {
         e.preventDefault();
-props.addTask(name);
-setName("");
-        }
-        function handleChange(e) {
-            setName(e.target.value);
-            }
+        props.addTask(name);
+        setName("");
+    }
+    function handleChange(e) {
+        setName(e.target.value);
+    }
     return (
         <form onSubmit={handleSubmit}>
             <h2 className="label-wrapper">
@@ -25,10 +25,14 @@ setName("");
                 value={name}
                 onChange={handleChange}
             />
-            <button type="submit" className="btn btn__primary btn__lg">
+            <button className="btn btn__primary btn__lg">
                 Ajouter
             </button>
+
         </form>
+
     );
+
+
 }
 export default Form;

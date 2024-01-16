@@ -1,23 +1,32 @@
 import './App.css';
+import { nanoid } from "nanoid";
 import Todo from './components/Todo';
 import Form from './components/Form';
 import FilterButton from './components/FilterButton';
+import { useState } from "react";
 
 function App(props) {
+  const newTask = { id: `todo-${nanoid()}`, name, completed: false };
+  const [tasks, setTasks] = useState(props.tasks);
   const completedTasks = props.tasks.filter((task) => task.completed);
   const incompleteTasks = props.tasks.filter((task) => !task.completed);
   const totalTasks = props.tasks.length;
 
-  const taskList = props.tasks.map((task) => (
-    <Todo id={task.id} name={task.name} completed={task.completed} key={task.id} />
-  ));
+  const taskList = tasks.map((task) => (
+    <Todo
+    id={task.id}
+    name={task.name}
+    completed={task.completed}
+    key={task.id}
+    />
+    ));
 
   const taskList2 = props.tasks2.map((task2) => (
     <FilterButton id={task2.id} name={task2.name} />
   ));
   function addTask(name) {
-    alert(name);
-    }
+    const newTask = { id: "id", name, completed: false };
+    setTasks([...tasks, newTask]);    }
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
@@ -38,7 +47,7 @@ function App(props) {
           <tr>
             <td>{completedTasks.length}</td>
             <td>{incompleteTasks.length}</td>
-            <td>{totalTasks}</td>
+            <td>{taskList.length}</td>
           </tr>
         </tbody>
       </table>
