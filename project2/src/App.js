@@ -15,12 +15,14 @@ function App(props) {
   const taskList2 = props.tasks2.map((task2) => (
     <FilterButton id={task2.id} name={task2.name} />
   ));
-
+  function addTask(name) {
+    alert(name);
+    }
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
 
-      <Form />
+      <Form addTask={addTask} />
 
       <div className="filters btn-group stack-exception">{taskList2}</div>
 
