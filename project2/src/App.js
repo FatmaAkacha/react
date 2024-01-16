@@ -11,13 +11,17 @@ function App(props) {
   const completedTasks = props.tasks.filter((task) => task.completed);
   const incompleteTasks = props.tasks.filter((task) => !task.completed);
   const totalTasks = props.tasks.length;
-
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter((task) => id !== task.id);
+    setTasks(remainingTasks);
+    }
   const taskList = tasks.map((task) => (
     <Todo
     id={task.id}
     name={task.name}
     completed={task.completed}
     key={task.id}
+    deleteTask={deleteTask}
     />
     ));
 
