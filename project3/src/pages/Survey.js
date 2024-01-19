@@ -1,36 +1,31 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Results from './Results';
-
+import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 function Survey() {
     const { questionNumber } = useParams();
-    const questionNumberInt = parseInt(questionNumber, 10);
-
-    if (questionNumberInt === 11) {
-        return <Results />;
+    let numero = parseInt(questionNumber);
+    let precedent = "";
+    let suivant = "";
+    if (numero === 1) {
+        precedent = "";
+        suivant = "/survey/2";
     }
-
+    else if (numero === 10) {
+        precedent = "/survey/9";
+        suivant = "/results";
+    }
+    else {
+        precedent = "/survey/" + (numero - 1);
+        suivant = "/survey/" + (numero + 1);
+    }
     return (
         <div>
             <h1>Questionnaire 🧮</h1>
-            {questionNumberInt === 1 && <h2>Question 1</h2>}
-            {questionNumberInt !== 1 && questionNumberInt !== 11 && (
-                <h2>Question {questionNumber}</h2>
-            )}
-
-            {questionNumberInt > 1 && (
-                <Link to={`/survey/${questionNumberInt - 1}`}>
-                    Previous
-                </Link>
-            )}
-
-            {questionNumberInt < 11 && (
-                <Link to={`/survey/${questionNumberInt + 1}`}>
-                    Next
-                </Link>
-            )}
+            <h2>Question {questionNumber}</h2>
+            <nav>
+                <Link to={precedent}>Précédent</Link>
+                <Link to={suivant}>Suivant</Link>
+            </nav>
         </div>
-    );
+    )
 }
-
-export default Survey;
+export default Survey
