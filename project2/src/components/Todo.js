@@ -1,13 +1,29 @@
 import { useState } from "react";
 function Todo(props) {
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.editTask(props.id, newName);
+        setNewName("");
+        setEditing(false);
+        }
+    function handleChange(e) {
+        setNewName(e.target.value);
+        }
+    const [newName, setNewName] = useState("");
     const [isEditing, setEditing] = useState(false);
     const editingTemplate = (
-        <form className="stack-small">
+        <form className="stack-small" onSubmit={handleSubmit}>
             <div className="form-group">
                 <label className="todo-label" htmlFor={props.id}>
                     Nouveau nom pour {props.name}
                 </label>
-                <input id={props.id} className="todo-text" type="text" />
+                <input
+id={props.id}
+className="todo-text"
+type="text"
+value={newName}
+onChange={handleChange}
+/>
             </div>
             <div className="btn-group">
                 <button
