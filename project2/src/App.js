@@ -13,38 +13,39 @@ function App(props) {
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
-    }
-    function editTask(id, newName) {
-      const editedTaskList = tasks.map((task) => {
+  }
+  function editTask(id, newName) {
+    const editedTaskList = tasks.map((task) => {
       // if this task has the same ID as the edited task
       if (id === task.id) {
-      //
-      return { ...task, name: newName };
+        //
+        return { ...task, name: newName };
       }
       return task;
-      });
-      setTasks(editedTaskList);
-      }
+    });
+    setTasks(editedTaskList);
+  }
   const taskList = tasks.map((task) => (
     <Todo
-    id={task.id}
-    name={task.name}
-    completed={task.completed}
-    key={task.id}
-    deleteTask={deleteTask}
-    editTask={editTask}
+      id={task.id}
+      name={task.name}
+      completed={task.completed}
+      key={task.id}
+      deleteTask={deleteTask}
+      editTask={editTask}
     />
-    ));
-    const tasksWords =
-taskList.length !== 1 ? "tâches restantes" : "tâche restante";
-const headingText = `${taskList.length} ${tasksWords}`;
+  ));
+  const tasksWords =
+    taskList.length !== 1 ? "tâches restantes" : "tâche restante";
+  const headingText = `${taskList.length} ${tasksWords}`;
 
   const taskList2 = props.tasks2.map((task2) => (
     <FilterButton id={task2.id} name={task2.name} />
   ));
   function addTask(name) {
     const newTask = { id: "id", name, completed: false };
-    setTasks([...tasks, newTask]);    }
+    setTasks([...tasks, newTask]);
+  }
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
@@ -65,7 +66,7 @@ const headingText = `${taskList.length} ${tasksWords}`;
           <tr>
             <td>{completedTasks.length === 1 ? "1 tâche terminée" : `${completedTasks.length} tâches terminées`}</td>
             <td>{incompleteTasks.length === 1 ? "1 tâche restante" : `${incompleteTasks.length} tâches restantes`}</td>
-            <td>{taskList.length=== 1 ? "1 tâche total" : `${taskList.length} tâches totales`}</td>
+            <td>{taskList.length === 1 ? "1 tâche total" : `${taskList.length} tâches totales`}</td>
           </tr>
         </tbody>
       </table>
