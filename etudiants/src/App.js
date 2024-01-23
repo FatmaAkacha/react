@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
 
 function App() {
+  const [data, setData] = useState([]);
+  const EtudiantTotal = data.length;
+  useEffect(() => {
+    fetch('https://3002-fatmaakacha-react-cck07jabxp3.ws-eu107.gitpod.io/etudiants')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+  console.log(data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Nombres total des étudiants est : {EtudiantTotal}</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{item.nom}</li>
+        ))}
+      </ul>
+
     </div>
   );
 }
