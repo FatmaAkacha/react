@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Form from './Form';
 import Pays from './component/Pays';
 import Region from './component/Region';
+import Classes from './Classes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Route path="/form" element={<Form />} />
       <Route path="/pays" element={<Pays />} />
       <Route path="/region/:reg" element={<Region />} />
+      <Route path="/classes" element={<Classes />} />
     </Routes>
   </Router>
 );

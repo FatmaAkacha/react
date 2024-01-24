@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-function App() {
+function Classes() {
   const [data, setData] = useState([]);
   const EtudiantTotal = data.length;
   useEffect(() => {
-    fetch('https://3001-fatmaakacha-node1-wjibbg9278t.ws-eu107.gitpod.io/etudiants')
+    fetch('https://3001-fatmaakacha-node1-wjibbg9278t.ws-eu107.gitpod.io/classes')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => {
@@ -18,7 +18,7 @@ function App() {
       <h1> Nombres total des étudiants est : {EtudiantTotal}</h1>
       <ul>
         {data.map(item => (
-          <li key={item.id}>{item.nom}</li>
+          <li key={item.id}>{item.labelle}</li>
         ))}
       </ul>
 
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Classes;
