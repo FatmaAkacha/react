@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 function Pays() {
     const [data, setData] = useState([]);
-    const EtudiantTotal = data.length;
+    const {reg} = useParams();
 
     useEffect(() => {
-        fetch('https://restcountries.com/v3.1/all')
+        fetch(`https://restcountries.com/v3.1/region/${reg}`)
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => {
