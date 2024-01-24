@@ -6,7 +6,7 @@ function Recherche() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://3002-fatmaakacha-react-cck07jabxp3.ws-eu107.gitpod.io/etudiants/${id}`)
+    fetch(`https://3001-fatmaakacha-node1-wjibbg9278t.ws-eu107.gitpod.io/etudiants/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Etudiant not found");

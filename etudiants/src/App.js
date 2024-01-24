@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState([]);
   const EtudiantTotal = data.length;
   useEffect(() => {
-    fetch('https://3001-fatmaakacha-node1-wjibbg9278t.ws-eu107.gitpod.io/etudiants')
+    fetch('https://3001-fatmaakacha-node1-wjibbg9278t.ws-eu107.gitpod.io/etudiants/')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => {
