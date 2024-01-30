@@ -9,6 +9,7 @@ import Region from './component/Region';
 import Classes from './Classes';
 import Modifier from './Modifier';
 import Ajouter from './Ajouter';
+import Supprimer from './Supprimer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
       <Route path="/classes" element={<Classes />} />
       <Route path="/modifier" element={<Modifier />} />
       <Route path="/ajouter" element={<Ajouter />} />
+      <Route path="/supprimer" element={<Supprimer />} />
     </Routes>
   </Router>
 );
