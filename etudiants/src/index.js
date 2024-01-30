@@ -10,6 +10,7 @@ import Classes from './Classes';
 import Modifier from './Modifier';
 import Ajouter from './Ajouter';
 import Supprimer from './Supprimer';
+import RechercheA from './RechercheA';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
       <Route path="/modifier" element={<Modifier />} />
       <Route path="/ajouter" element={<Ajouter />} />
       <Route path="/supprimer" element={<Supprimer />} />
+      <Route path="/rechercheA" element={<RechercheA />} />
     </Routes>
   </Router>
 );
