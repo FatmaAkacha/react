@@ -12,7 +12,7 @@ function Supprimer() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-fatmaakacha-node1-5gloq4f1k3b.ws-eu107.gitpod.io/etudiants`, {
+        fetch(`https://3002-fatmaakacha-node1-xjm49ubwp1y.ws-eu107.gitpod.io/etudiants`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,9 +28,7 @@ function Supprimer() {
             msg = "Error Ajout etudiant"
         });
     };
-    function refreshPage() {
-        window.location.reload(true);
-      }
+
     
 
     return (
@@ -39,7 +37,7 @@ function Supprimer() {
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                  <input type="text" value={selectedId} onChange={handleSelectChange} style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
 
-                <button type="submit" onClick={refreshPage} style={{ padding: '10px 15px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: 'white', cursor: 'pointer' }}> Delete </button>
+                <button type="submit" style={{ padding: '10px 15px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: 'white', cursor: 'pointer' }}> Delete </button>
             </form>
             <App />
         </div>

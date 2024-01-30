@@ -15,7 +15,7 @@ function Modifier() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-fatmaakacha-node1-5gloq4f1k3b.ws-eu107.gitpod.io/etudiants${selectedId}`, {
+        fetch(`https://3002-fatmaakacha-node1-xjm49ubwp1y.ws-eu107.gitpod.io/etudiants/${selectedId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

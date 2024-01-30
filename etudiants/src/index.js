@@ -7,7 +7,7 @@ import Form from './Form';
 import Pays from './component/Pays';
 import Region from './component/Region';
 import Classes from './Classes';
-import Modifier from './Modifier';
+import Modifier from './Modifier.js';
 import Ajouter from './Ajouter';
 import Supprimer from './Supprimer';
 import RechercheA from './RechercheA';
