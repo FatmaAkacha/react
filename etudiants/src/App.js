@@ -1,27 +1,24 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [data, setData] = useState([]);
-  const EtudiantTotal = data.length;
+
   useEffect(() => {
-    fetch('https://3001-fatmaakacha-node1-wjibbg9278t.ws-eu107.gitpod.io/etudiants/')
+    fetch('https://3002-fatmaakacha-node1-5gloq4f1k3b.ws-eu107.gitpod.io/etudiants')
       .then(response => response.json())
       .then(data => setData(data))
-      .catch(error => {
-        console.error(error);
-      });
+      .catch(error => console.error('Erreur :', error));
   }, []);
   console.log(data);
 
   return (
     <div className="App">
-      <h1> Nombres total des étudiants est : {EtudiantTotal}</h1>
+      <h1>Le nombre d'étudiants est : {data.length}</h1>
       <ul>
         {data.map(item => (
-          <li key={item.id}>{item.nom}</li>
+          <li key={item.id}>{item.lastname} {item.firstname}</li>
         ))}
       </ul>
-
     </div>
   );
 }
