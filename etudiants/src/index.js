@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Recherche from './Recherche';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -11,10 +12,12 @@ import Modifier from './Modifier.js';
 import Ajouter from './Ajouter';
 import Supprimer from './Supprimer';
 import RechercheA from './RechercheA';
+import Header from './Header.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
+     <Header />
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/recherche/:id" element={<Recherche />} />

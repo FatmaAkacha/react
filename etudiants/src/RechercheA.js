@@ -22,19 +22,29 @@ function RechercherA() {
     };
 
     return (
-        <div style={{ margin: '0 auto', width: '300px', textAlign: 'center', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
-            <h1 style={{ color: '#444', marginBottom: '20px' }}>Rechercher</h1>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Name" style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
-                <input type="text" value={inputValue1} onChange={handleInputChange1} placeholder="Ville" style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
-                <button type="submit" style={{ padding: '10px 15px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: 'white', cursor: 'pointer' }}>Rechercher</button>
-            </form>
-            <div>
-                {data.map(student => (
-                    <p key={student.id}>{student.lastname}, {student.firstname} - {student.ville}</p>
-                ))}
+        <div className="container mt-5">
+        <div className="card mx-auto" style={{ maxWidth: "300px" }}>
+            <div className="card-body">
+                <h1 className="card-title text-center">Rechercher</h1>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Name" className="form-control" />
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" value={inputValue1} onChange={handleInputChange1} placeholder="Ville" className="form-control" />
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-block">Rechercher</button>
+                </form>
             </div>
         </div>
+        <div className="mt-3">
+            {data.map((student) => (
+                <p key={student.id}>
+                    {student.lastname}, {student.firstname} - {student.ville}
+                </p>
+            ))}
+        </div>
+    </div>
     );
 }
 
