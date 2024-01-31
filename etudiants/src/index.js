@@ -13,6 +13,8 @@ import Ajouter from './Ajouter';
 import Supprimer from './Supprimer';
 import RechercheA from './RechercheA';
 import Header from './Header.js';
+import Editer from './Editer.js';
+import Delete from './Delete.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,6 +31,8 @@ root.render(
       <Route path="/ajouter" element={<Ajouter />} />
       <Route path="/supprimer" element={<Supprimer />} />
       <Route path="/rechercheA" element={<RechercheA />} />
+      <Route path="/editer/:id" element={<Editer />} />
+      <Route path="/delete/:id" element={<Delete />} />
     </Routes>
   </Router>
 );
