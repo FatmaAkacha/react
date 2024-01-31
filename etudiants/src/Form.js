@@ -9,7 +9,7 @@ function Form() {
   };
 
   const rechercher = () => {
-    fetch(`https://3002-fatmaakacha-react-cck07jabxp3.ws-eu107.gitpod.io/etudiants/${id}`)
+    fetch(`https://3002-fatmaakacha-node1-o4jphh6he9p.ws-eu107.gitpod.io/etudiants/${id}`)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Erreur :', error));

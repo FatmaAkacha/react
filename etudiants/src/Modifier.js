@@ -15,7 +15,7 @@ function Modifier() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-fatmaakacha-node1-xjm49ubwp1y.ws-eu107.gitpod.io/etudiants/${selectedId}`, {
+        fetch(`https://3002-fatmaakacha-node1-o4jphh6he9p.ws-eu107.gitpod.io/etudiants/${selectedId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,6 +30,9 @@ function Modifier() {
             })
             .catch(error => console.error('Error updating data:', error));
     };
+    function refreshPage() {
+        window.location.reload(true);
+      }
     return (
         <div className="container mt-5">
             <div className="card mx-auto" style={{ maxWidth: "300px" }}>
@@ -45,7 +48,7 @@ function Modifier() {
                         <div className="mb-3">
                             <input type="text" value={inputValue1} onChange={handleInputChange1} placeholder="New Firstname" className="form-control" />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block">Update Data</button>
+                        <button type="submit" onClick={refreshPage} className="btn btn-primary btn-block">Update Data</button>
                     </form>
                 </div>
             </div>
