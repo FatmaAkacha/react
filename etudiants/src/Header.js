@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -23,7 +24,7 @@ function Header() {
                             <Link className="nav-link " style={{ margin: '0 1rem' }} to="/supprimer">Supprimer</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/rechercherA">Rechercher</Link>
+                            <Link className="nav-link" to="/rechercheA">Rechercher</Link>
                         </li>
                     </ul>
                 </div>
